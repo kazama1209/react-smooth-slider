@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledSliderItem } from "components/styles/SliderItem";
+import { StyledSliderItem } from "components/styles";
 
 interface StyledSliderWrapperProps {
   zoomFactor: number;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledSliderItem } from "components/styles/SliderItem";
+import { StyledSliderItem } from "components/styles";
 
 interface SliderItemProps {
   slideClass: string;

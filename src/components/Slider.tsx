@@ -5,7 +5,7 @@ import {
   StyledSlider,
   StyledButtonWrapper,
   StyledButton,
-} from "components/styles/Slider";
+} from "components/styles";
 
 import SliderItem from "components/SliderItem";
 
