@@ -21,12 +21,18 @@ const App: React.FC = () => {
 
   /* 画像データは Pixabay API 経由で取得（無料で高画質な写真を提供してくれるサービス） */
   const fetchPctures = async () => {
-    const perPage: number = 20; /* 1ページあたりの取得件数 */
-    const key = process.env.REACT_APP_PIXABAY_API_KEY || "";
+    const baseUrl = "https://pixabay.com/api/";
 
-    const res = await (
-      await fetch(`https://pixabay.com/api/?per_page=${perPage}&key=${key}`)
-    ).json();
+    const perPage = 20; /* 1ページあたりの取得件数 */
+    const key =
+      process.env.REACT_APP_PIXABAY_API_KEY || ""; /* Pixabay APIキー */
+
+    const query = new URLSearchParams({
+      per_page: perPage.toString(),
+      key: key,
+    }); /* クエリパラメータを作成 */
+
+    const res = await (await fetch(`${baseUrl}?${query}`)).json();
 
     setPictures(res.hits);
     setIsLoading(false);
